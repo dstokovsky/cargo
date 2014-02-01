@@ -1,6 +1,5 @@
 from api.models import *
 from rest_framework import serializers
-from rest_framework import pagination
 
 class UserFriendsSerializer( serializers.ModelSerializer ):
     class Meta:

@@ -1,0 +1,28 @@
+First of all clone the repository into some directory:
+git clone https://github.com/dstokovsky/cargo.git
+
+Then you should install pip package manager for python and python and mysql development 
+packages because some data from them is necessary for MySQL-python package:
+ - su -c 'yum install python-devel yum install mysql-devel.i686 mysql-devel.x86_64'
+
+Then we could install virtualenv to limit the work environment
+pip install virtualenv
+
+If it has been already installed then create the new env and activate it:
+virtualenv cargo
+source cargo/bin/activate
+
+To exit current env just execute in shell:
+deactivate
+
+For proper work of application the next packages should be installed in the
+project environment:
+pip install django
+pip install djangorestframework
+pip install django-filter
+pip install markdown
+pip install -U distribute>=0.6.28
+pip install MySQL-python
+
+To check out the app:
+python manage.py runserver
