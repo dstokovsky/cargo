@@ -82,14 +82,15 @@ class SocialGraphFactory( object ):
         """
         Builds the user friends data according to request.
         """
-        if method == "retrieve":
-            if action == "direct":
-                return DirectFriendsGraph.retrieve( user_id )
-            elif action == "friends":
-                return FriendsOfFriendsGraph.retrieve( user_id )
-            elif action == "suggested":
-                return SuggestedFriendsGraph.retrieve( user_id )
-            else:
-                raise Exception( "{0}:{1}:{2} - not implemented here".format( action, method, "friends" ) )
-        else:
-            raise Exception( "'{0}' method does not implemented here".format( method ) )
+        try:
+            if method == "retrieve":
+                if action == "direct":
+                    return DirectFriendsGraph.retrieve( user_id )
+                elif action == "friends":
+                    return FriendsOfFriendsGraph.retrieve( user_id )
+                elif action == "suggested":
+                    return SuggestedFriendsGraph.retrieve( user_id )
+        except Exception:
+            pass
+        
+        return []

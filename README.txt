@@ -5,6 +5,10 @@ by adding to each url parameter called format, for example: http://127.0.0.1:800
 First of all its an api root:
 - http://127.0.0.1:8000/
 It provides you with available view sets that can be accessed via specified url.
+
+All pages, except the root, need the authentication, according to api/sql/database.sql 
+its admin:admin.
+
 The next one is:
 - http://127.0.0.1:8000/users/
 This api action provides all users with its friends that are divided on pages by 10
@@ -22,12 +26,9 @@ http://127.0.0.1:8000/users/<user_id>/friends/<friends_type>/
 
 Examples:
  - http://127.0.0.1:8000/users/20/friends/direct/ - returns the list contains all 
-direct friends ids for user with id = 20
+direct friends ids for user with id = 20;
  - http://127.0.0.1:8000/users/20/friends/friends/ - returns the list of dicts
 where each contains direct friend id as key and the list of friends ids for current 
-direct friend as value for user with id = 20
+direct friend as value for user with id = 20;
  - http://127.0.0.1:8000/users/20/friends/suggested/ - returns the list contains
-all suggested friends ids for user with id = 20
-
-All pages, except the root, need the authentication, according to api/sql/database.sql 
-its admin:admin.
+all suggested friends ids for user with id = 20.

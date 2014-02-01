@@ -7,6 +7,6 @@ router.register( r'users', views.UserViewSet )
 
 urlpatterns = patterns('',
     url( r'^', include( router.urls ) ),
-    url( r'^users/(?P<user_id>[0-9]+)/friends/(?P<method>(direct|friends|suggested))/$', 
+    url( r'^users/(?P<user_id>[0-9]+)/friends/(?P<method>[a-z]+)/$', 
         views.AbstractFriendsListView.as_view() ),
 )

@@ -24,5 +24,13 @@ pip install markdown
 pip install -U distribute>=0.6.28
 pip install MySQL-python
 
+Don't forget to create database and add its credentials to cargo/settings.py.
+Also after applying api/sql/database.sql the next one should be executed in 
+mysql shell to give the opportunity to run tests:
+GRANT ALL PRIVILEGES ON test_cargo.* TO 'cargo'@'localhost';
+
 To check out the app:
 python manage.py runserver
+
+To run tests:
+python manage.py test
