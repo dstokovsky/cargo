@@ -1,0 +1,6 @@
+nbproject
+cargo/bin
+cargo/include
+cargo/lib
+cargo/lib64
+*.pyc
